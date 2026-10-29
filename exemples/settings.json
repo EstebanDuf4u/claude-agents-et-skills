@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./bin/app agent context *)",
+      "Bash(./bin/app agent schema *)",
+      "Bash(./bin/app agent list)",
+      "Bash(./bin/app doctor)",
+      "Bash(./bin/app scheduler status)",
+      "Write(./data/agent-io/**)",
+      "Read(./data/agent-io/**)"
+    ],
+    "ask": [
+      "Bash(./bin/app agent submit *)",
+      "Bash(./bin/app agent run *)",
+      "Bash(./bin/app scheduler run *)"
+    ],
+    "deny": [
+      "Read(./data/*.password)",
+      "Read(./data/*.token)",
+      "Read(./.env)",
+      "Read(./config/app.toml)",
+      "Edit(./data/**)",
+      "Write(./data/*.db)",
+      "Bash(sqlite3 *)",
+      "Bash(./bin/app restore *)",
+      "Bash(./bin/app user *)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}
